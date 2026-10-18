@@ -1,0 +1,21 @@
+GEOPS SST GLOBAL - SITIO WEB
+============================
+
+CÓMO PUBLICARLO EN HOSTINGER
+1. Entra a hPanel > Sitios web > Administrar > Administrador de archivos.
+2. Abre la carpeta public_html y borra el index.html de bienvenida si existe.
+3. Sube TODO el contenido de esta carpeta (no la carpeta en sí) a public_html:
+   index.html, styles.css, main.js, .htaccess, y las carpetas assets y lib.
+   Importante: el archivo .htaccess está oculto en algunos equipos; asegúrate de subirlo.
+4. Abre tu dominio. Listo.
+
+CAMBIAR WHATSAPP Y CORREO
+- Edita lib/manifest.js y escribe el número en "whatsapp" (con código de país,
+  sin espacios ni signos, por ejemplo 584141234567). Con eso, el formulario
+  abre WhatsApp directamente con la solicitud escrita.
+- Los datos que se ven en pantalla (WhatsApp, correo, ubicación y horario)
+  están en index.html, en la sección "Contacto".
+
+SI SUBES CAMBIOS Y NO SE VEN
+- En index.html cambia el número ?v=20261017 de styles.css, main.js y
+  manifest.js por la fecha del día (por ejemplo ?v=20261020) y vuelve a subirlo.
