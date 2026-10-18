@@ -398,3 +398,24 @@ footer b{font-family:var(--f-display);letter-spacing:.08em;color:#eef2f8;font-si
 @keyframes waWiggle{0%,86%,100%{rotate:0deg}88%{rotate:-14deg}90%{rotate:12deg}92%{rotate:-10deg}94%{rotate:8deg}96%{rotate:-4deg}}
 @media (max-width:600px){.wa-fab{width:56px;height:56px;padding:0}.wa-fab .svg-inline--fa{width:30px;height:30px}}
 @media (prefers-reduced-motion:reduce){.wa-ripple{animation:none;opacity:0}.wa-fab{animation:waIn .6s 1.2s both}}
+
+/* ===== Política de privacidad ===== */
+.legal-page{padding-block:56px 80px}
+.legal{max-width:760px;margin:0 auto}
+.legal h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;text-transform:uppercase;margin:10px 0 8px;color:var(--navy)}
+.legal-date{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+.legal-intro{font-size:1.12rem;margin-top:22px}
+.legal-toc{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 8px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:6px}
+.legal-toc a{font-size:.88rem;text-decoration:none;color:var(--navy);padding:.3em .7em;border:1px solid var(--line);border-radius:999px}
+.legal-toc a:hover{border-color:var(--navy)}
+.legal section{padding-top:30px;scroll-margin-top:90px}
+.legal h2{font-size:1.6rem;text-transform:uppercase;margin-bottom:10px}
+.legal p,.legal li{color:var(--ink);line-height:1.7}
+.legal p+p{margin-top:12px}
+.legal ul{margin:10px 0 12px;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.legal li::marker{color:var(--amber)}
+.legal-back{margin-top:40px}
+.foot-link{color:#eef2f8;text-decoration:underline;text-underline-offset:3px}
+.foot-link:hover{color:var(--amber)}
+.form-note{font-size:.8rem;color:var(--muted);margin-top:-4px}
+.form-note a{color:var(--navy)}
