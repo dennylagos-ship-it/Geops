@@ -367,3 +367,12 @@ footer b{font-family:var(--f-display);letter-spacing:.08em;color:#eef2f8;font-si
 @media (max-width:700px){.shots-nav{width:38px;height:38px;top:calc(50% - 46px)}.shots-nav.prev{left:8px}.shots-nav.next{right:8px}.slide figcaption{padding:12px 14px 14px}.slide figcaption b{font-size:1.15rem}}
 .slide{display:flex;flex-direction:column}
 .slide figcaption{flex:1;align-content:start}
+
+/* ===== Redes sociales ===== */
+.cinfo .social{display:flex;flex-wrap:wrap;gap:10px}
+.cinfo .social a{display:inline-flex;align-items:center;gap:7px;color:inherit;text-decoration:none;font-size:.95rem;padding:.35em .8em;border:1px solid rgba(255,255,255,.25);border-radius:999px;transition:background .2s,color .2s,border-color .2s}
+.cinfo .social a:hover{background:var(--amber);color:var(--amber-ink);border-color:var(--amber)}
+.cinfo .social svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.foot-social{display:flex;gap:16px}
+.foot-social a{color:#eef2f8;text-decoration:none;border-bottom:1px solid transparent}
+.foot-social a:hover{border-color:var(--amber);color:var(--amber)}
