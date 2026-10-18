@@ -383,3 +383,18 @@ footer b{font-family:var(--f-display);letter-spacing:.08em;color:#eef2f8;font-si
 .foot-social .svg-inline--fa{width:17px;height:17px}
 .foot-social a:not(:has(svg)){width:auto;border-radius:999px;padding:0 12px;font-size:.8rem}
 .foot-social a:not(:has(svg))::after{content:attr(aria-label)}
+
+/* ===== WhatsApp flotante v2: solo ícono + efecto ===== */
+.wa-label{display:none}
+.wa-fab{width:62px;height:62px;padding:0;justify-content:center;isolation:isolate;animation:waIn .6s 1.2s cubic-bezier(.3,1.5,.5,1) both,waWiggle 6s 4s ease-in-out infinite}
+.wa-fab::after{display:none}
+.wa-fab .svg-inline--fa{width:34px;height:34px}
+.btn-wa .svg-inline--fa{width:21px;height:21px}
+.wa-fab:has(.svg-inline--fa) .wa-ico,.btn-wa:has(.svg-inline--fa) .wa-ico{display:none}
+.wa-ripple{position:absolute;inset:0;border-radius:50%;background:var(--wa);z-index:-1;animation:waRipple 2.4s 2s ease-out infinite;pointer-events:none}
+.wa-ripple.r2{animation-delay:3.2s}
+.wa-fab:hover{transform:scale(1.1) rotate(-8deg);animation-play-state:running,paused}
+@keyframes waRipple{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.9);opacity:0}}
+@keyframes waWiggle{0%,86%,100%{rotate:0deg}88%{rotate:-14deg}90%{rotate:12deg}92%{rotate:-10deg}94%{rotate:8deg}96%{rotate:-4deg}}
+@media (max-width:600px){.wa-fab{width:56px;height:56px;padding:0}.wa-fab .svg-inline--fa{width:30px;height:30px}}
+@media (prefers-reduced-motion:reduce){.wa-ripple{animation:none;opacity:0}.wa-fab{animation:waIn .6s 1.2s both}}
