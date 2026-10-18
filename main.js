@@ -83,7 +83,7 @@
   /* Aparición suave al hacer scroll (solo lo que está debajo de la primera pantalla) */
   function initReveal() {
     if (!("IntersectionObserver" in window)) return;
-    var els = document.querySelectorAll(".sec-head,.area,.step,.split > div,form.card,.feat,.clock,.diff,.shots");
+    var els = document.querySelectorAll(".sec-head,.area,.step,.split > div,form.card,.clock,.diff,.shots");
     var vh = window.innerHeight || 800;
     function done(t) {
       t.classList.add("in");
