@@ -435,3 +435,8 @@ footer b{font-family:var(--f-display);letter-spacing:.08em;color:#eef2f8;font-si
 .hero-bg::before{background:linear-gradient(90deg,rgba(18,36,71,.92) 0%,rgba(28,54,102,.74) 36%,rgba(28,54,102,.32) 66%,rgba(28,54,102,.12) 100%),linear-gradient(0deg,rgba(18,36,71,.6),transparent 35%)}
 .hb-img{filter:grayscale(.25) contrast(1.08) brightness(.95) saturate(.9)}
 @media (max-width:900px){.hero-bg::before{background:linear-gradient(180deg,rgba(18,36,71,.7),rgba(28,54,102,.82) 55%,rgba(18,36,71,.95))}}
+
+/* Portada sin lista de cumplimiento: una sola columna, más foto visible */
+.hero .wrap{grid-template-columns:minmax(0,1fr);padding-block:104px 120px}
+.hero .wrap > div{max-width:760px}
+@media (max-width:900px){.hero .wrap{padding-block:64px 80px}}
