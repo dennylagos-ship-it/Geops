@@ -320,3 +320,20 @@ footer b{font-family:var(--f-display);letter-spacing:.08em;color:#eef2f8;font-si
 .no-js .rv{opacity:1;transform:none}
 .cinfo a.v{color:inherit;text-decoration:none;border-bottom:1px solid var(--amber)}
 .cinfo a.v:hover{color:var(--amber)}
+
+/* ===== WhatsApp ===== */
+:root{--wa:#1fa855;--wa-dark:#178a45}
+.wa-ico{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
+.wa-ico .fill{fill:currentColor;stroke:none}
+.btn-wa{background:var(--wa);color:#fff;justify-content:center}
+.btn-wa:hover{background:var(--wa-dark);transform:translateY(-2px)}
+.wa-fab{position:fixed;z-index:20;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;text-decoration:none;border-radius:999px;padding:14px;box-shadow:0 10px 28px -8px rgba(0,0,0,.45);font-family:var(--f-display);font-weight:700;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;transition:transform .2s,background .2s;animation:waIn .6s 1.2s cubic-bezier(.3,1.5,.5,1) both}
+.wa-fab .wa-ico{width:28px;height:28px}
+.wa-fab:hover{background:var(--wa-dark);transform:translateY(-3px)}
+.wa-fab::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(31,168,85,.55);animation:waRing 2.6s 2s ease-out 3;pointer-events:none}
+.wa-label{padding-right:6px}
+@keyframes waIn{from{opacity:0;transform:scale(.4) translateY(20px)}to{opacity:1;transform:none}}
+@keyframes waRing{0%{box-shadow:0 0 0 0 rgba(31,168,85,.55)}100%{box-shadow:0 0 0 18px rgba(31,168,85,0)}}
+@media (max-width:600px){.wa-label{display:none}.wa-fab{padding:15px}}
+@media (prefers-reduced-motion:reduce){.wa-fab::after{animation:none}}
+.result a{color:var(--wa-dark);font-weight:600}

@@ -59,9 +59,15 @@
         (f.msg.value.trim() ? "\n\n" + f.msg.value.trim() : "");
       var num = String(BRAND.whatsapp || "").replace(/\D/g, "");
       if (num.length >= 10) {
-        out.textContent = "Abriendo WhatsApp con tu solicitud…";
+        var url = "https://wa.me/" + num + "?text=" + encodeURIComponent(t);
+        out.textContent = "Abriendo WhatsApp con tu solicitud. Si no se abrió, ";
+        var a = document.createElement("a");
+        a.href = url; a.target = "_blank"; a.rel = "noopener";
+        a.textContent = "toca aquí para enviarla";
+        out.appendChild(a);
+        out.appendChild(document.createTextNode("."));
         out.classList.add("show");
-        window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(t), "_blank", "noopener");
+        window.open(url, "_blank", "noopener");
         return;
       }
       out.textContent = "Solicitud lista. Cópiala y envíala por WhatsApp:\n\n" + t;
