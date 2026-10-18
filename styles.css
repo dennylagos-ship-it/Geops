@@ -318,3 +318,5 @@ footer b{font-family:var(--f-display);letter-spacing:.08em;color:#eef2f8;font-si
   nav.links .btn{margin-top:14px;justify-content:center}
 }
 .no-js .rv{opacity:1;transform:none}
+.cinfo a.v{color:inherit;text-decoration:none;border-bottom:1px solid var(--amber)}
+.cinfo a.v:hover{color:var(--amber)}
