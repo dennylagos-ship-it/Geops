@@ -83,7 +83,7 @@
   /* Aparición suave al hacer scroll (solo lo que está debajo de la primera pantalla) */
   function initReveal() {
     if (!("IntersectionObserver" in window)) return;
-    var els = document.querySelectorAll(".sec-head,.area,.step,.split > div,form.card,.feat,.clock,.diff");
+    var els = document.querySelectorAll(".sec-head,.area,.step,.split > div,form.card,.feat,.clock,.diff,.shots");
     var vh = window.innerHeight || 800;
     function done(t) {
       t.classList.add("in");
@@ -106,11 +106,61 @@
     }, 6000);
   }
 
+
+  /* Carrusel de capturas de la app */
+  function initShots() {
+    var root = document.querySelector(".shots");
+    if (!root || root.dataset.bound) return;
+    root.dataset.bound = "1";
+    var track = root.querySelector(".shots-track");
+    var slides = root.querySelectorAll(".slide");
+    var dots = root.querySelectorAll(".dot-btn");
+    var n = slides.length, cur = 0, timer = null, paused = false;
+    function go(i) {
+      cur = (i + n) % n;
+      track.scrollTo({ left: cur * track.clientWidth, behavior: "smooth" });
+      mark();
+    }
+    function mark() {
+      dots.forEach(function (d, k) { d.setAttribute("aria-current", k === cur ? "true" : "false"); });
+    }
+    root.querySelector(".prev").addEventListener("click", function () { stop(); go(cur - 1); });
+    root.querySelector(".next").addEventListener("click", function () { stop(); go(cur + 1); });
+    dots.forEach(function (d) { d.addEventListener("click", function () { stop(); go(+d.dataset.i); }); });
+    var t;
+    track.addEventListener("scroll", function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        var i = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+        if (i !== cur) { cur = i; mark(); }
+      }, 80);
+    }, { passive: true });
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); stop(); go(cur + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); stop(); go(cur - 1); }
+    });
+    function start() { if (!timer) timer = setInterval(function () { if (!paused && !document.hidden) go(cur + 1); }, 5000); }
+    function stop() { clearInterval(timer); timer = null; }
+    root.addEventListener("mouseenter", function () { paused = true; });
+    root.addEventListener("mouseleave", function () { paused = false; });
+    root.addEventListener("touchstart", function () { stop(); }, { passive: true });
+    root.addEventListener("focusin", function () { paused = true; });
+    root.addEventListener("focusout", function () { paused = false; });
+    window.addEventListener("resize", function () { track.scrollLeft = cur * track.clientWidth; });
+    mark();
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) start(); else stop(); });
+      }, { threshold: 0.05 }).observe(root);
+    } else start();
+  }
+
   function boot() {
     safe(initMenu, "menu");
     safe(initServiceLinks, "serviceLinks");
     safe(initForm, "form");
     safe(initReveal, "reveal");
+    safe(initShots, "shots");
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

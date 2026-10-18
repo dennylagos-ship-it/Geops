@@ -15,10 +15,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261017d">
+<link rel="stylesheet" href="styles.css?v=20261017e">
 <script>document.documentElement.className+=" js";</script>
-<script defer src="lib/manifest.js?v=20261017d"></script>
-<script defer src="main.js?v=20261017d"></script>
+<script defer src="lib/manifest.js?v=20261017e"></script>
+<script defer src="main.js?v=20261017e"></script>
 </head>
 <body>
 <a class="skip" href="#inicio">Saltar al contenido</a>
@@ -134,6 +134,8 @@
           <p class="eyebrow" style="margin-top:18px">Nuestra app</p>
           <h2 class="app-name">SST LOPCYMAT<span>Manager</span></h2>
           <p class="app-lead"><b>La gestión de Seguridad y Salud en el Trabajo de tus empresas, al día con la LOPCYMAT, en un solo lugar.</b></p>
+        </div>
+        <div>
           <p class="app-sub">Registra cada empresa, recibe alertas antes de que algo venza y genera en segundos los documentos que pide el INPSASEL, con los datos y el logo de cada cliente. Del Excel y las carpetas a un semáforo de cumplimiento.</p>
           <ul class="who">
             <li>Asesores y especialistas SST independientes que atienden varias empresas</li>
@@ -145,31 +147,54 @@
             <a class="btn btn-navy" href="#contacto" data-serv="App SST LOPCYMAT Manager">Solicita una demostración</a>
           </div>
         </div>
-        <div>
-          <div class="mock" role="img" aria-label="Vista de ejemplo del panel de la app con índice de cumplimiento por empresa y alertas">
-            <div class="mock-bar"><i></i><i></i><i></i><span>SST LOPCYMAT Manager · Panel</span></div>
-            <div class="mock-body">
-              <div>
-                <h4>Índice de cumplimiento</h4>
-                <div class="co">
-                  <div class="co-row"><b>Constructora Ejemplo C.A.</b><em>92%</em><div class="meter"><span class="ok" style="--v:92%"></span></div></div>
-                  <div class="co-row"><b>Alimentos Demo, S.A.</b><em>74%</em><div class="meter"><span class="warn" style="--v:74%"></span></div></div>
-                  <div class="co-row"><b>Taller Muestra C.A.</b><em>48%</em><div class="meter"><span class="bad" style="--v:48%"></span></div></div>
-                </div>
-              </div>
-              <div>
-                <h4>Alertas</h4>
-                <div class="al">
-                  <div><span class="dot bad"></span><span>Recarga de extintor vencida<small>Taller Muestra · Área de soldadura</small></span></div>
-                  <div><span class="dot warn"></span><span>3 exámenes periódicos vencen en 7 días<small>Alimentos Demo</small></span></div>
-                  <div><span class="dot ok"></span><span>Comité: próxima reunión agendada<small>Constructora Ejemplo</small></span></div>
-                </div>
-              </div>
-              <div class="mock-foot"><span>Generar notificación de riesgos</span><span>Acta de escrutinio</span><span>Plan de emergencias</span></div>
-            </div>
+      </div>
+
+      <div class="shots" aria-roledescription="carrusel" aria-label="Capturas de los módulos de la app">
+        <div class="shots-frame">
+          <div class="shots-bar"><i></i><i></i><i></i><span>SST LOPCYMAT Manager</span></div>
+          <div class="shots-track" tabindex="0">
+            <figure class="slide" id="app-panel" role="group" aria-roledescription="captura" aria-label="1 de 9: Panel de control">
+              <img src="assets/img/app/panel.webp" width="1400" height="664" loading="eager" decoding="async" alt="Captura del módulo Panel de control de SST LOPCYMAT Manager">
+              <figcaption><span class="num">01/09</span><b>Panel de control</b><span class="desc">Índice de cumplimiento, Comité, EPP, vigilancia médica y semáforo de vencimientos de cada empresa.</span></figcaption>
+            </figure>
+            <figure class="slide" id="app-trabajadores" role="group" aria-roledescription="captura" aria-label="2 de 9: Trabajadores y nómina">
+              <img src="assets/img/app/trabajadores.webp" width="1400" height="664" loading="lazy" decoding="async" alt="Captura del módulo Trabajadores y nómina de SST LOPCYMAT Manager">
+              <figcaption><span class="num">02/09</span><b>Trabajadores y nómina</b><span class="desc">Estatus médico, notificación de riesgos (Art. 56) y dotación de EPP de cada trabajador.</span></figcaption>
+            </figure>
+            <figure class="slide" id="app-riesgos" role="group" aria-roledescription="captura" aria-label="3 de 9: Puestos y matriz de riesgos">
+              <img src="assets/img/app/riesgos.webp" width="1400" height="664" loading="lazy" decoding="async" alt="Captura del módulo Puestos y matriz de riesgos de SST LOPCYMAT Manager">
+              <figcaption><span class="num">03/09</span><b>Puestos y matriz de riesgos</b><span class="desc">Riesgos por puesto según la NT-04-2023, con jerarquía de controles y el EPP del cargo.</span></figcaption>
+            </figure>
+            <figure class="slide" id="app-accidentes" role="group" aria-roledescription="captura" aria-label="4 de 9: Accidentes e incidentes">
+              <img src="assets/img/app/accidentes.webp" width="1400" height="664" loading="lazy" decoding="async" alt="Captura del módulo Accidentes e incidentes de SST LOPCYMAT Manager">
+              <figcaption><span class="num">04/09</span><b>Accidentes e incidentes</b><span class="desc">Plazos legales a la vista, declaraciones, investigación e índices de frecuencia y severidad.</span></figcaption>
+            </figure>
+            <figure class="slide" id="app-epp" role="group" aria-roledescription="captura" aria-label="5 de 9: Control de EPP">
+              <img src="assets/img/app/epp.webp" width="1400" height="664" loading="lazy" decoding="async" alt="Captura del módulo Control de EPP de SST LOPCYMAT Manager">
+              <figcaption><span class="num">05/09</span><b>Control de EPP</b><span class="desc">Inventario con normas COVENIN, stock mínimo, dotaciones y actas de entrega.</span></figcaption>
+            </figure>
+            <figure class="slide" id="app-emergencias" role="group" aria-roledescription="captura" aria-label="6 de 9: Emergencias y señalización">
+              <img src="assets/img/app/emergencias.webp" width="1400" height="664" loading="lazy" decoding="async" alt="Captura del módulo Emergencias y señalización de SST LOPCYMAT Manager">
+              <figcaption><span class="num">06/09</span><b>Emergencias y señalización</b><span class="desc">Extintores, botiquines y señalización con recargas, inspecciones y vencimientos.</span></figcaption>
+            </figure>
+            <figure class="slide" id="app-actas" role="group" aria-roledescription="captura" aria-label="7 de 9: Actas del Comité">
+              <img src="assets/img/app/actas.webp" width="1400" height="664" loading="lazy" decoding="async" alt="Captura del módulo Actas del Comité de SST LOPCYMAT Manager">
+              <figcaption><span class="num">07/09</span><b>Actas del Comité</b><span class="desc">Libro digital de sesiones del CSSL, asistentes y seguimiento de cada acuerdo.</span></figcaption>
+            </figure>
+            <figure class="slide" id="app-tramites" role="group" aria-roledescription="captura" aria-label="8 de 9: Trámites ante el INPSASEL">
+              <img src="assets/img/app/tramites.webp" width="1400" height="664" loading="lazy" decoding="async" alt="Captura del módulo Trámites ante el INPSASEL de SST LOPCYMAT Manager">
+              <figcaption><span class="num">08/09</span><b>Trámites ante el INPSASEL</b><span class="desc">Recaudos por trámite, vigencias y expedientes de delegados, Comité y PSST.</span></figcaption>
+            </figure>
+            <figure class="slide" id="app-documentos" role="group" aria-roledescription="captura" aria-label="9 de 9: Generador de documentos">
+              <img src="assets/img/app/documentos.webp" width="1400" height="664" loading="lazy" decoding="async" alt="Captura del módulo Generador de documentos de SST LOPCYMAT Manager">
+              <figcaption><span class="num">09/09</span><b>Generador de documentos</b><span class="desc">Notificaciones, actas y formatos listos con los datos de la empresa y del trabajador.</span></figcaption>
+            </figure>
           </div>
-          <p class="mock-cap">Ilustración con datos de ejemplo.</p>
+          <button type="button" class="shots-nav prev" aria-label="Captura anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" class="shots-nav next" aria-label="Captura siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
+        <div class="shots-dots"><button type="button" class="dot-btn" aria-label="Ver Panel de control" data-i="0"></button><button type="button" class="dot-btn" aria-label="Ver Trabajadores y nómina" data-i="1"></button><button type="button" class="dot-btn" aria-label="Ver Puestos y matriz de riesgos" data-i="2"></button><button type="button" class="dot-btn" aria-label="Ver Accidentes e incidentes" data-i="3"></button><button type="button" class="dot-btn" aria-label="Ver Control de EPP" data-i="4"></button><button type="button" class="dot-btn" aria-label="Ver Emergencias y señalización" data-i="5"></button><button type="button" class="dot-btn" aria-label="Ver Actas del Comité" data-i="6"></button><button type="button" class="dot-btn" aria-label="Ver Trámites ante el INPSASEL" data-i="7"></button><button type="button" class="dot-btn" aria-label="Ver Generador de documentos" data-i="8"></button></div>
+        <p class="mock-cap">Capturas reales de la versión piloto, con una empresa de ejemplo.</p>
       </div>
 
       <div class="clock">
