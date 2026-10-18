@@ -155,12 +155,41 @@
     } else start();
   }
 
+
+  /* Fondo de la portada: rotación de fotos y profundidad al hacer scroll */
+  function initHeroBg() {
+    var bg = document.querySelector(".hero-bg");
+    if (!bg || bg.dataset.bound) return;
+    bg.dataset.bound = "1";
+    var imgs = bg.querySelectorAll(".hb-img"), i = 0;
+    if (imgs.length > 1) {
+      setInterval(function () {
+        if (document.hidden) return;
+        imgs[i].classList.remove("is-on");
+        i = (i + 1) % imgs.length;
+        void imgs[i].offsetWidth;
+        imgs[i].classList.add("is-on");
+      }, 7000);
+    }
+    var ticking = false;
+    window.addEventListener("scroll", function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var y = Math.min(window.scrollY, 900);
+        bg.style.setProperty("--py", (y * 0.3).toFixed(1) + "px");
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
   function boot() {
     safe(initMenu, "menu");
     safe(initServiceLinks, "serviceLinks");
     safe(initForm, "form");
     safe(initReveal, "reveal");
     safe(initShots, "shots");
+    safe(initHeroBg, "heroBg");
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

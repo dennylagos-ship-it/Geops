@@ -419,3 +419,19 @@ footer b{font-family:var(--f-display);letter-spacing:.08em;color:#eef2f8;font-si
 .foot-link:hover{color:var(--amber)}
 .form-note{font-size:.8rem;color:var(--muted);margin-top:-4px}
 .form-note a{color:var(--navy)}
+
+/* ===== Fondo fotográfico de la portada ===== */
+.hero{isolation:isolate}
+.hero-bg{position:absolute;inset:-8% 0 0 0;z-index:-1;overflow:hidden;transform:translate3d(0,var(--py,0px),0);will-change:transform}
+.hb-img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:70% 50%;opacity:0;filter:grayscale(.55) contrast(1.1) brightness(.9);transition:opacity 1.6s ease}
+.hb-img.is-on{opacity:1;animation:kenburns 9s ease-out both}
+@keyframes kenburns{from{transform:scale(1.14) translateX(2%)}to{transform:scale(1) translateX(0)}}
+.hero-bg::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(18,36,71,.96) 0%,rgba(28,54,102,.88) 38%,rgba(28,54,102,.55) 70%,rgba(28,54,102,.35) 100%),linear-gradient(0deg,rgba(18,36,71,.7),transparent 40%)}
+.hero-bg::after{content:"";position:absolute;inset:-20% -60%;z-index:2;background:linear-gradient(100deg,transparent 42%,rgba(242,163,0,.10) 48%,rgba(255,255,255,.12) 50%,transparent 56%);animation:sweep 7s 1.5s ease-in-out infinite;pointer-events:none}
+@keyframes sweep{0%{transform:translateX(-60%)}55%,100%{transform:translateX(60%)}}
+.hero .gear{opacity:.06;z-index:0}
+@media (max-width:900px){.hb-img{object-position:60% 50%}.hero-bg::before{background:linear-gradient(180deg,rgba(18,36,71,.82),rgba(28,54,102,.9) 60%,rgba(18,36,71,.96))}}
+@media (prefers-reduced-motion:reduce){.hero-bg::after{animation:none;opacity:0}.hb-img.is-on{animation:none}}
+.hero-bg::before{background:linear-gradient(90deg,rgba(18,36,71,.92) 0%,rgba(28,54,102,.74) 36%,rgba(28,54,102,.32) 66%,rgba(28,54,102,.12) 100%),linear-gradient(0deg,rgba(18,36,71,.6),transparent 35%)}
+.hb-img{filter:grayscale(.25) contrast(1.08) brightness(.95) saturate(.9)}
+@media (max-width:900px){.hero-bg::before{background:linear-gradient(180deg,rgba(18,36,71,.7),rgba(28,54,102,.82) 55%,rgba(18,36,71,.95))}}
