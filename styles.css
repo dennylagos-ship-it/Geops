@@ -376,3 +376,10 @@ footer b{font-family:var(--f-display);letter-spacing:.08em;color:#eef2f8;font-si
 .foot-social{display:flex;gap:16px}
 .foot-social a{color:#eef2f8;text-decoration:none;border-bottom:1px solid transparent}
 .foot-social a:hover{border-color:var(--amber);color:var(--amber)}
+.cinfo .social .svg-inline--fa,.cinfo .social i{width:18px;height:18px;font-size:18px}
+.foot-social{align-items:center}
+.foot-social a{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.2);color:#eef2f8;transition:background .2s,color .2s,transform .2s}
+.foot-social a:hover{background:var(--amber);color:var(--amber-ink);border-color:var(--amber);transform:translateY(-2px)}
+.foot-social .svg-inline--fa{width:17px;height:17px}
+.foot-social a:not(:has(svg)){width:auto;border-radius:999px;padding:0 12px;font-size:.8rem}
+.foot-social a:not(:has(svg))::after{content:attr(aria-label)}
