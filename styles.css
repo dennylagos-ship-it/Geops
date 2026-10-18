@@ -440,3 +440,35 @@ footer b{font-family:var(--f-display);letter-spacing:.08em;color:#eef2f8;font-si
 .hero .wrap{grid-template-columns:minmax(0,1fr);padding-block:104px 120px}
 .hero .wrap > div{max-width:760px}
 @media (max-width:900px){.hero .wrap{padding-block:64px 80px}}
+
+/* ===== Logo protagonista ===== */
+.brand img{height:54px}
+.hero .wrap{grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
+.hero-badge{position:relative;width:min(360px,30vw);aspect-ratio:1;display:grid;place-items:center;animation:badgeIn 1s .5s cubic-bezier(.2,.8,.2,1) both}
+.badge-plate{position:relative;width:70%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff,#eef1f6 70%);box-shadow:0 0 0 6px rgba(255,255,255,.12),0 0 60px 10px rgba(242,163,0,.25),0 30px 60px -20px rgba(0,0,0,.6);animation:float 6s ease-in-out infinite}
+.badge-plate::after{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px solid rgba(242,163,0,.6);animation:pulseRing 3.2s ease-out infinite}
+.badge-plate img{width:62%;height:auto;filter:drop-shadow(0 4px 8px rgba(18,36,71,.25))}
+.badge-ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 40s linear infinite}
+.badge-ring text{font-family:var(--f-mono);font-size:10.5px;letter-spacing:3.2px;fill:rgba(238,242,248,.85);text-transform:uppercase}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pulseRing{0%{transform:scale(.92);opacity:.9}100%{transform:scale(1.18);opacity:0}}
+@keyframes badgeIn{from{opacity:0;transform:scale(.7) rotate(-12deg)}to{opacity:1;transform:none}}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.hero-badge{order:-1;width:170px;margin-bottom:-6px}.badge-ring text{font-size:11px}}
+@media (prefers-reduced-motion:reduce){.badge-ring,.badge-plate::after{animation:none}}
+
+/* ===== Pie de página con logo ===== */
+footer .wrap.foot-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr) minmax(0,1fr);gap:40px;padding-block:56px 36px;font-size:.95rem}
+.foot-brand{display:flex;flex-direction:column;gap:16px;max-width:340px}
+.foot-logo{display:inline-grid;place-items:center;width:150px;padding:18px;background:#fff;border-radius:14px;box-shadow:0 18px 40px -18px rgba(0,0,0,.6);transition:transform .3s}
+.foot-logo:hover{transform:translateY(-4px) rotate(-2deg)}
+.foot-logo img{width:100%;height:auto}
+.foot-brand p{color:#b6c2d8;line-height:1.6}
+.foot-nav,.foot-contact{display:flex;flex-direction:column;gap:10px}
+.foot-nav b,.foot-contact b{font-family:var(--f-display);font-size:1.1rem;letter-spacing:.08em;text-transform:uppercase;color:#eef2f8;margin-bottom:4px}
+.foot-nav a,.foot-contact > a{color:#b6c2d8;text-decoration:none}
+.foot-nav a:hover,.foot-contact > a:hover{color:var(--amber)}
+.foot-contact .foot-social{margin-top:6px}
+footer .wrap.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:18px 26px;border-top:1px solid rgba(255,255,255,.1);font-size:.85rem}
+@media (max-width:760px){footer .wrap.foot-grid{grid-template-columns:1fr;gap:28px}}
+.badge-plate img{width:auto;height:74%;max-width:70%;transform:translateY(-2%)}
+.badge-ring text{letter-spacing:0}
